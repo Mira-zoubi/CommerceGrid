@@ -1,0 +1,168 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: poppins;
+}
+
+body {
+  background-color: #ffffff;
+  color: #111827;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.AppHeader {
+  height: 1099px;
+  padding: 0 20px;
+    
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #fafafa 100%
+    
+  );
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.HeaderTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 26px;
+  font-weight: 700;
+
+  color: #111827;
+
+  transition: transform 0.3s ease;
+}
+
+.HeaderTitle:hover {
+  transform: translateY(-1px);
+}
+
+.HeaderTitle img {
+  transition: transform 0.4s ease;
+}
+
+.HeaderTitle:hover img {
+  transform: rotate(-3deg) scale(1.05);
+}
+
+
+.NavbarLinks {
+  display: flex;
+  gap: 12px;
+  
+}
+
+.link {
+  padding: 6px 16px;
+  border-radius: 999px;
+
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+
+  color: #111827;
+  background-color: transparent;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+    
+}
+
+.link:hover {
+  background-color: #f3f4f6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.link-active {
+  background: linear-gradient(
+    135deg,
+    #111827,
+    #1f2937
+  );
+  color: white;
+
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.link-active:hover {
+  background: linear-gradient(
+    135deg,
+    #111827,
+    #1f2937
+  );
+  color: white;
+  transform: translateY(-1px);
+}
+
+
+.AuthLinks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.LoginLink {
+  width: 110px;
+  text-align: center;
+
+  padding: 6px 14px;
+  border-radius: 999px;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  text-decoration: none;
+  color: #111827;
+
+  background-color: #f9fafb;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.LoginLink:hover {
+  background: linear-gradient(
+    135deg,
+    #fbcfe8,
+    #f9a8d4
+  );
+  box-shadow: 0 6px 16px rgba(249, 168, 212, 0.4);
+  transform: translateY(-1px);
+}

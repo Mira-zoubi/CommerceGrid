@@ -1,0 +1,15 @@
+.App{
+ 
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.AppMain{
+  display: grid;
+  grid-template-columns: 270px 3fr;
+  
+  
+}
