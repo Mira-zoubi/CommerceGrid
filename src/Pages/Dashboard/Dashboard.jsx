@@ -2,10 +2,14 @@ import {  useContext, useState } from "react";
 import { PagesContext } from "../PagesContext";
 import { Link } from "react-router-dom";
 import './Dashboard.css';
+import Marquee from "./Marquee";
+import RecentOrdersTable from "./RecentOrdersTable";
+import Charts from "./Charts";
 
 import aramexLogo from "../../assets/aramex.png";
 import appleLogo from "../../assets/apple.png";
 import amazonLogo from "../../assets/amazon.png";
+
 
 function TotalItems({title,children } ){
     return(
@@ -28,7 +32,7 @@ function TotalItems({title,children } ){
 
 function Dashboard(){
 
-    const{ Error,Loading, InventoryTotal ,  OrdersTotal,  CustomersTotal, RecentOrders, FeedbackArray}=useContext(PagesContext);
+    const{ Error,Loading, InventoryTotal ,  OrdersTotal,  CustomersTotal, FeedbackArray}=useContext(PagesContext);
     const[Shown, setShown]=useState(3);
 
 
@@ -79,35 +83,18 @@ function Dashboard(){
         })}
         </div>
 
-           <div className="RecentOrdersTableContainer">
-<h2> Recent Orders</h2>
-           <table className="RecentOrdersTable">
-        
-            <thead className="thead">
-                <th className="th">Title </th>
-                <th className="th"> Price</th>
-                <th className="th"> Quantity</th>
-            </thead>
- 
-            <tbody >
-                
-                {RecentOrders.map((item)=>{
- 
-                    return(
-                        <tr>
-                        
-                            <td className="td">{item.title}</td>
-                            <td className="td">{item.price}</td>
-                            <td className="td">{item.quantity}</td>
-                        </tr>
-                    )
-                })}
-            </tbody>
-           </table>
- 
+        <div>
+            <Charts/>
         </div>
 
-                
+          <div>
+            <RecentOrdersTable/>
+          </div>
+           
+
+     <div>
+       <Marquee/>
+        </div>           
 
 
  <h2 className="title"> Explore companies</h2>
