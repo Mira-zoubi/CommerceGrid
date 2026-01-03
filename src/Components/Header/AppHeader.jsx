@@ -66,7 +66,7 @@ function AppHeader(){
             <div className='AuthLinks'>
             <Link to={"login"} className='LoginLink'>Login</Link>
             <Link to={"register"} className='LoginLink'>Register</Link>
-            <Link to={"Cart"} ><ShoppingCartOutlined  style={{fontSize:"25px", color:"deeppink"}}/></Link>  {/* //here i used antdesign element */}
+            <Link to={"cart"} ><ShoppingCartOutlined  style={{fontSize:"25px", color:"deeppink"}}/></Link>  
             </div>
 
             

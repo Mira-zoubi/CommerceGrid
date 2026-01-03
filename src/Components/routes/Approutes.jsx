@@ -8,6 +8,8 @@ import AppleDetails from "../../Pages/AppleDetailsPage/AppleDetails";
 import AmazonDetails from "../../Pages/AmazonDetailsPage/AmazonDetails";
 import ViewAramexProducts from "../../Pages/AramexDetailsPage/ViewAramexProducts";
 import DefaultAramexPage from "../../Pages/AramexDetailsPage/DefaultAramexPage";
+
+
 const routes = [
   {
     path: "/",
@@ -50,7 +52,8 @@ const routes = [
       {
         path:"/AmazonDetails",
         element: <AmazonDetails/>
-      }
+      },
+   
     ]
   }
 ];
