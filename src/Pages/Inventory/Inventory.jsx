@@ -12,13 +12,14 @@ function Inventory(){
 
         <table className="Table"> 
             <thead >
+            
                 <th className="th">thumbnail</th>
                 <th className="th">Title</th>
-                <th className="th"> Stock</th>
-                <th className="th"> Price</th>
-                <th className="th"> Rating</th>
-                <th className="th"> Brand </th>
-                <th className="th"> Category</th>
+                <th className="th">Stock</th>
+                <th className="th">Price</th>
+                <th className="th">Rating</th>
+                <th className="th">Brand</th>
+                <th className="th">Category</th>
             </thead>
 
             <tbody>
