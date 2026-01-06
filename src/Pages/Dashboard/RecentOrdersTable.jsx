@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { PagesContext } from "../PagesContext";
 import { Link } from "react-router-dom";
+import "./RecentOrdersTable.css";
 
 function RecentOrdersTable() {
   const { RecentOrders } = useContext(PagesContext);

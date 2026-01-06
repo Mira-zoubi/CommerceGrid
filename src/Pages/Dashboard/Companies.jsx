@@ -1,6 +1,7 @@
 import aramexLogo from "../../assets/aramex.png";
 import appleLogo from "../../assets/apple.png";
 import amazonLogo from "../../assets/amazon.png";
+import "./Companies.css";
 
 import { Link } from "react-router-dom";
 

@@ -1,123 +1,38 @@
+
 .DashboardContainer {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;
   gap: 32px;
   padding: 40px;
   align-items: start;
-
- 
 }
 
-
-.FeedbackContainer {
-  background-color: #ffffff;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 20px 8px 24px rgba(60, 35, 35, 0.08);
-margin-top: 30px;
- border: 1px solid rgba(0, 0, 0, 0.15);
- 
-
-}
-.ShowMoreLessButton{
-    color: blue;
-      text-decoration: underline;
-      cursor: pointer;
-}
-.FeedbackMessages{
-    padding: 4px;
-    color: black;
-    font-size: 18px;
-}
-.AnimatedBorder {
-  position: relative;
-  border-radius: 20px;
+.DashboardContent {
+  width: 100%;
 }
 
-/* thin moving line */
-.AnimatedBorder::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px; /* 👈 THIS controls thickness */
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #6366f1,
-    #ec4899,
-    #22d3ee,
-    transparent
-  );
-  background-size: 300% 300%;
-  animation: borderWalk 6s linear infinite;
-
-  /* mask trick to keep it a line */
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-
-  pointer-events: none;
-}
-
-/* animation */
-@keyframes borderWalk {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 300% 50%;
-  }
-}
-
-
-h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  color: #111827;
-}
-.PageTitle{
-
+.PageTitle {
   font-family: 'Poppins';
   font-size: 26px;
   font-weight: 700;
   color: #111827;
- margin-top: 30px;
+  margin-top: 30px;
 }
-
 
 .CardsContainer {
-     margin-top: 30px;
+  margin-top: 30px;
   display: flex;
   gap: 20px;
-  
 }
-
 
 .Cards {
   width: 220px;
   padding: 16px 18px;
-
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #fafafa 100%
-  );
-
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 14px;
-
-  box-shadow:
-    0 6px 18px rgba(0, 0, 0, 0.06);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   position: relative;
   overflow: hidden;
 }
@@ -129,18 +44,13 @@ h2 {
   left: 0;
   height: 4px;
   width: 100%;
-  background: linear-gradient(
-    90deg,
-    #6366f1,
-    #ec4899
-  );
+  background: linear-gradient(90deg, #6366f1, #ec4899);
   opacity: 0.8;
 }
 
 .Cards:hover {
   transform: translateY(-4px);
-  box-shadow:
-    0 12px 28px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 .Title {
@@ -154,182 +64,39 @@ h2 {
   font-size: 32px;
   font-weight: 700;
   color: #111827;
-  margin-top: 8px;
 }
-
-.Cards svg {
-  font-size: 22px;
-  color: #6366f1;
-  margin-bottom: 6px;
-}
-.RecentOrdersTableContainer {
-  background: #ffffff;
+.AnimatedBorder {
+  position: relative;
   border-radius: 20px;
-  padding: 24px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
-  margin-top: 190px;
 }
 
-/* Header */
-.RecentOrdersHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
+.AnimatedBorder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #6366f1,
+    #ec4899,
+    #22d3ee,
+    transparent
+  );
+  background-size: 300% 300%;
+  animation: borderWalk 6s linear infinite;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+
+  pointer-events: none;
 }
 
-.RecentOrdersHeader h2 {
-  margin: 0;
+@keyframes borderWalk {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
 }
-
-.subtitle {
-  font-size: 14px;
-  color: #6b7280;
-  margin-top: 4px;
-}
-
-.viewAll {
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  color: #111827;
-}
-
-.viewAll:hover {
-  text-decoration: underline;
-}
-
-/* Orders list */
-.OrdersList {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-/* Single order row */
-.OrderRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Left side */
-.OrderLeft {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.OrderId {
-  font-size: 16px;
-  font-weight: 600;
-  color: #111827;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.OrderTitle {
-  font-size: 15px;
-  color: #374151;
-}
-
-.OrderStore {
-  font-size: 14px;
-  color: #9ca3af;
-}
-
-/* Price */
-.OrderPrice {
-  font-size: 18px;
-  font-weight: 600;
-  color: #111827;
-}
-
-/* Status pills */
-.Status {
-  padding: 4px 12px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 500;
-  text-transform: lowercase;
-}
-
-.Status.completed {
-  background: #dcfce7;
-  color: #15803d;
-}
-
-.Status.processing {
-  background: #dbeafe;
-  color: #2563eb;
-}
-
-.Status.pending {
-  background: #fef3c7;
-  color: #d97706;
-}
-
-
-
-.CompanyCardsConatiner {
- display: flex;
-  gap: 24px;
-width: 700px;
-  /* border: 2px solid black; */
-}
-
-
-.CompanyCard {
-  background-color: #ffffff;
-  border-radius: 14px;
-  padding: 24px;
-  text-align: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  cursor: pointer;
-
-}
-
-
-.CompanyCard:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-}
-
-.CompanyCard img {
-  width: 190px;
-  height: 140px;
-  object-fit: contain;
-
-}
-
-.CompanyCard h3 {
-  font-size: 16px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 12px;
-}
-
-.CompanyCard a {
-  display: inline-block;
-  padding: 8px 18px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #ffffff;
-  background-color: #111827;
-  border-radius: 999px;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-}
-
-.CompanyCard a:hover {
-  background-color: #374151;
-}
-.BarChart{
-  border: 2px solid black;
-  margin-top: 60px;
-}
-
-
-

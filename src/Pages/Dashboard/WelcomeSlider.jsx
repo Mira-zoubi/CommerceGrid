@@ -3,11 +3,12 @@ import WelcomeImg from "../../assets/WelcomeImg.png";
 import WelcomeImg1 from "../../assets/WelcomeImg1.png";
 import WelcomeImg2 from "../../assets/WelcomeImg2.png";
 import WelcomeImg3 from "../../assets/WelcomeImg3.png";
+//here I applied tailwindCSS
 
 function WelcomeSlider() {
 
-  const [CurrentIndex, setCurrentIndex] = useState(0);
 
+const[CurrentIndex, setCurrentIndex]=useState(0);
   const Slides = [
     { img: WelcomeImg },
     { img: WelcomeImg1 },

@@ -93,9 +93,9 @@ function Dashboard(){
      <div>
             <RecentOrdersTable/>
           </div>
-           <div>
+           {/* <div>
             <RecentOrdersTable/>
-          </div>
+          </div> */}
 
 </div>
          

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useContext } from "react"
 import { PagesContext } from "../PagesContext"
-import "./FeedbackSection.jsx";
+import "./FeedbackSection.css";
 
 function FeedbackSection(){
 
