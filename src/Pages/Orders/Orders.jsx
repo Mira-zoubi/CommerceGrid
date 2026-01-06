@@ -11,11 +11,13 @@ function Orders(){
 <div className="OrdersArrayContainer"> 
             <table className="Table">
                 <thead>
-                    <th className="th"> Thumbnail</th>
+                  
+
+                    <th className="th">Thumbnail</th>
                     <th className="th">Title</th>
-                    <th className="th"> Price</th>
-                    <th className="th"> Quantity</th>
-                    <th className="th"> Discount Percentage </th>
+                    <th className="th">Price</th>
+                    <th className="th">Quantity</th>
+                    <th className="th">Discount Percentage</th>
                 </thead>
 
                 <tbody>
