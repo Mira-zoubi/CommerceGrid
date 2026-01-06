@@ -1,0 +1,37 @@
+.marqueeTitle{
+  margin-top: 80px;
+}
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #f9fafb;
+  padding: 20px 0;
+  /* margin: 40px; */
+  border-radius: 20px;
+  height: 130px;
+   /* border: 2px solid black; */
+}
+
+.marquee-track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+  /* border: 2px solid black; */
+}
+
+.marquee-track img {
+  height: 90px;      
+  width: auto;       
+  object-fit: contain;
+ 
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

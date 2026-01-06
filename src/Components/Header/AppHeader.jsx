@@ -1,9 +1,5 @@
 import './AppHeader.css';
-
 import DashboardLogo from '../../assets/DashboardLogo.jpg';
-
-
-
 import { Link, useLocation } from 'react-router-dom';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 

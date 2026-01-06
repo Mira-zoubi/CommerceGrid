@@ -1,0 +1,32 @@
+[
+    {
+        "label": "America",
+        "data":[900]
+
+    },
+     {
+        "label": "Jordan",
+        "data":[10]
+
+    },
+     {
+        "label": "Spain",
+        "data":[500]
+
+    },
+     {
+        "label": "Egypt",
+        "data":[100]
+
+    },
+     {
+        "label": "Colombia",
+        "data":[700]
+
+    },
+     {
+        "label": "Russia",
+        "data":[360]
+
+    }
+]
