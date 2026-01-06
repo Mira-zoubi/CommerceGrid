@@ -5,10 +5,12 @@ import './Dashboard.css';
 import Marquee from "./Marquee";
 import RecentOrdersTable from "./RecentOrdersTable";
 import Charts from "./Charts";
+import WelcomeSlider from "./WelcomeSlider";
+import FeedbackSection from "./FeedbackSection";
+// import TopCustomersTable from "./TopCustomersTable";
+import Companies from "./Companies";
 
-import aramexLogo from "../../assets/aramex.png";
-import appleLogo from "../../assets/apple.png";
-import amazonLogo from "../../assets/amazon.png";
+
 
 
 function TotalItems({title,children } ){
@@ -32,8 +34,8 @@ function TotalItems({title,children } ){
 
 function Dashboard(){
 
-    const{ Error,Loading, InventoryTotal ,  OrdersTotal,  CustomersTotal, FeedbackArray}=useContext(PagesContext);
-    const[Shown, setShown]=useState(3);
+    const{ Error,Loading, InventoryTotal ,  OrdersTotal,  CustomersTotal}=useContext(PagesContext);
+   
 
 
     const Items=[
@@ -49,22 +51,19 @@ function Dashboard(){
           return  <h1> Loading...</h1>
     }
 
-   function showMoreLess(){
-  if(Shown>= FeedbackArray.length){
-        
-              setShown(3)
-        }
-        else{
-            
-            setShown(prev=>prev+3)
-        }
-   }
+ 
 
     return(
         <>
 
+
         <div className="DashboardContainer">
         <div className="DashboardContent">
+
+
+         <div>
+            <WelcomeSlider/>
+         </div>
         <h2 className="PageTitle"> Dashboard</h2>
         <div className="CardsContainer">
         {Items.map((item)=>{
@@ -83,70 +82,38 @@ function Dashboard(){
         })}
         </div>
 
+     
+
         <div>
             <Charts/>
         </div>
 
-          <div>
+<div className="flex gap-5 w-183">
+
+     <div>
             <RecentOrdersTable/>
           </div>
+           {/* <div>
+            <RecentOrdersTable/>
+          </div> */}
+
+</div>
+         
+
            
 
      <div>
        <Marquee/>
         </div>           
 
+<div>
+    <Companies/>
+</div>
 
- <h2 className="title"> Explore companies</h2>
-        <div className="CompanyCardsConatiner">
-
-            <div className="CompanyCard">
-
-                   <img src={aramexLogo} alt="Aramex Company Logo" />
-                    <h3> Aramex </h3>
-                    <p> Logistics & Shipping</p>
-                    <Link to={"/AramexDetails"}>Details</Link>
-            </div>
-
-            <div className="CompanyCard">
-
-                   <img src={appleLogo} alt="Apple Company Logo" />
-                    <h3> Aramex </h3>
-                    <p>Online retail marketplace</p>
-                    <Link to={"/AppleDetails"}>Details</Link>
-            </div>
-
-                <div className="CompanyCard">
-
-                   <img src={amazonLogo} alt="Amazon Company Logo" />
-                    <h3> Aramex </h3>
-                    <p>Technology supplier</p>
-                    <Link to={"/AmazonDetails"}>Details</Link>
-            </div>
-                
-       
-        </div>
         </div>
 
  
-        <div className="FeedbackContainer">
-           <h2> Feedback</h2>
-        
-            {FeedbackArray
-            .slice(0, Shown)
-            .map((feedback)=>{
-                return(
-                <>
-                    <li className="FeedbackMessages"> {feedback.body}</li>
-                </>
-                )
-               
-            })}
-             
-            <button className="ShowMoreLessButton" onClick={showMoreLess}> {Shown>= FeedbackArray.length ?" see less..." : "see more... "}</button>
-       
-        </div>
-
+       <FeedbackSection/>
         </div>
         </>
         

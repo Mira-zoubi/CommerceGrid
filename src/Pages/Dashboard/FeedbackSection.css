@@ -1,0 +1,23 @@
+.FeedbackContainer {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 20px 8px 24px rgba(60, 35, 35, 0.08);
+  margin-top: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.FeedbackMessages {
+  padding: 4px;
+  color: black;
+  font-size: 18px;
+}
+
+.ShowMoreLessButton {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}

@@ -141,7 +141,7 @@ export function PagesProvider({children}){
             throw new Error("error");
         })
         .catch(err=>setError(err))
-        .then(data=>setFeedbackArray(data.comments)
+        .then(data=>setFeedbackArray(data.comments.slice(0,7))
                     
     )
 
