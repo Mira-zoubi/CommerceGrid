@@ -16,8 +16,7 @@
   box-shadow: 20px 8px 24px rgba(60, 35, 35, 0.08);
 margin-top: 30px;
  border: 1px solid rgba(0, 0, 0, 0.15);
-  position: sticky;
-  top: 40px;
+ 
 
 }
 .ShowMoreLessButton{
@@ -29,6 +28,48 @@ margin-top: 30px;
     padding: 4px;
     color: black;
     font-size: 18px;
+}
+.AnimatedBorder {
+  position: relative;
+  border-radius: 20px;
+}
+
+/* thin moving line */
+.AnimatedBorder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px; /* 👈 THIS controls thickness */
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #6366f1,
+    #ec4899,
+    #22d3ee,
+    transparent
+  );
+  background-size: 300% 300%;
+  animation: borderWalk 6s linear infinite;
+
+  /* mask trick to keep it a line */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+
+  pointer-events: none;
+}
+
+/* animation */
+@keyframes borderWalk {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
 }
 
 
@@ -121,76 +162,114 @@ h2 {
   color: #6366f1;
   margin-bottom: 6px;
 }
-
 .RecentOrdersTableContainer {
-  width: 680px;
-  margin-top: 200px;
-
-  padding: 20px;
-
-  background-color: #ffffff;
-  border-radius: 16px;
-
-  box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  margin-top: 190px;
 }
 
-.RecentOrdersTable {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-  font-family: 'Poppins', sans-serif;
-
+/* Header */
+.RecentOrdersHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
 }
 
+.RecentOrdersHeader h2 {
+  margin: 0;
+}
 
-.thead th {
-  background: linear-gradient(
-    135deg,
-    #111827,
-    #1f2937
-  );
-  color: white;
-
-  padding: 12px;
+.subtitle {
   font-size: 14px;
-  font-weight: 600;
-  text-align: left;
+  color: #6b7280;
+  margin-top: 4px;
 }
 
-.td {
-  padding: 12px;
+.viewAll {
   font-size: 14px;
   font-weight: 500;
+  cursor: pointer;
   color: #111827;
-
-  background-color: #f9fafb;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-
-  transition: background-color 0.2s ease;
 }
 
-
-.RecentOrdersTable tbody tr:hover .td {
-  background-color: #f3f4f6;
+.viewAll:hover {
+  text-decoration: underline;
 }
 
+/* Orders list */
+.OrdersList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
-h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 22px;
+/* Single order row */
+.OrderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Left side */
+.OrderLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.OrderId {
+  font-size: 16px;
   font-weight: 600;
-  color: #6b7280;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+.OrderTitle {
+  font-size: 15px;
+  color: #374151;
+}
 
-.title {
-  margin: 40px 60px 20px;
-  font-size: 22px;
+.OrderStore {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* Price */
+.OrderPrice {
+  font-size: 18px;
   font-weight: 600;
-  color: #111827; 
-
+  color: #111827;
 }
+
+/* Status pills */
+.Status {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
+.Status.completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.Status.processing {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.Status.pending {
+  background: #fef3c7;
+  color: #d97706;
+}
+
 
 
 .CompanyCardsConatiner {

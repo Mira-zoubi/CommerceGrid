@@ -13,7 +13,6 @@ function Charts(){
        <div className="chart-card">
 
         <h1 style={{color:"black"}}>Revenue Overview</h1>
-        <h2> hello</h2>
         <p style={{color:"gray", marginBottom:"30px"}}>Monthly performance and order trends</p>
 
           <Bar 
