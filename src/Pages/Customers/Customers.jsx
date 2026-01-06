@@ -33,7 +33,8 @@ import "./Customers.css";
                     <td>{item.gender}</td>
                     <td>{item.name.first}</td>
                     <td>{item.name.last}</td>
-                    <td>{item.phone}</td>
+                   
+                    <td> {item.phone}</td>
 
                 </tr>
             )
