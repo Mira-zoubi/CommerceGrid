@@ -1,14 +1,15 @@
-
 .InventoryArrayContainer {
-  margin: 40px 60px;
+  margin: 40px auto;         
   padding: 20px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  overflow-x: auto;
-  margin-right: 150px;
- 
+
+  max-width: 1200px;         
+  width: calc(100% - 40px);  
+  overflow-x: auto;           
 }
+
 .PageTitle{
 
   font-family: 'Poppins';
@@ -19,7 +20,7 @@
 }
 .Table {
 
-  width: 100%;
+
   border-collapse: collapse;
   font-size: 14px;
   min-width: 900px;

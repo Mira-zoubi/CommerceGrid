@@ -2,11 +2,15 @@ import { useContext, useState } from "react";
 import { PagesContext } from "../PagesContext";
 import "./Customers.css";
 
+
+
  function Customers(){
     const {CustomersArray}=useContext(PagesContext);
 
     return(
         <>
+
+        
         <h2 className="PageTitle"> Customers</h2>
         <div className="CustomersArrayContainer">
 
