@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap');
+
+.CardsContainer {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.Cards {
+  width: 220px;
+  padding: 16px 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.Percentage {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+font-family: 'Space Grotesk', sans-serif;
+}
+
+.Cards::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #6366f1, #ec4899);
+  opacity: 0.8;
+}
+
+.Cards:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+
+}
+
+.Title {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(17, 24, 39, 0.7);
+  margin-bottom: 6px;
+}
+
+.total {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+}
