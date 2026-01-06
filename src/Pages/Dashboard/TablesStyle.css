@@ -1,12 +1,13 @@
-.RecentOrdersTableContainer {
+.TableContainer {
   background: #ffffff;
   border-radius: 20px;
+
   padding: 24px;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
   margin-top: 190px;
 }
 
-.RecentOrdersHeader {
+.Header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,26 +30,25 @@
   text-decoration: underline;
 }
 
-/* Orders */
-.OrdersList {
+.List {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.OrderRow {
+.Row {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.OrderLeft {
+.Left {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.OrderId {
+.Id {
   font-size: 16px;
   font-weight: 600;
   color: #111827;
@@ -57,23 +57,22 @@
   gap: 10px;
 }
 
-.OrderTitle {
+.Title {
   font-size: 15px;
   color: #374151;
 }
 
-.OrderStore {
+.Store {
   font-size: 14px;
   color: #9ca3af;
 }
 
-.OrderPrice {
+.Price {
   font-size: 18px;
   font-weight: 600;
   color: #111827;
 }
 
-/* Status pills */
 .Status {
   padding: 4px 12px;
   border-radius: 999px;

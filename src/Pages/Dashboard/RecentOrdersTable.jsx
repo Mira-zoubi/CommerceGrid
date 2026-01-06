@@ -1,14 +1,14 @@
 import { useContext } from "react";
 import { PagesContext } from "../PagesContext";
 import { Link } from "react-router-dom";
-import "./RecentOrdersTable.css";
+import "./TablesStyle.css";
 
 function RecentOrdersTable() {
   const { RecentOrders } = useContext(PagesContext);
 
   return (
-    <div className="RecentOrdersTableContainer AnimatedBorder ">
-      <div className="RecentOrdersHeader">
+    <div className="TableContainer AnimatedBorder ">
+      <div className="Header">
         <div>
           <h2>Recent Orders</h2>
           <p className="subtitle">Latest transactions</p>
@@ -18,26 +18,21 @@ function RecentOrdersTable() {
       </Link>
       </div>
 
-      <div className="OrdersList">
+      <div className="List">
         {RecentOrders.map((item) => (
-          <div key={item.id} className="OrderRow">
-            <div className="OrderLeft">
-              <div className="OrderId">
-                ORD-{item.id}
-                <span className={`Status ${item.status}`}>
-                  {item.status}
-                </span>
-              </div>
+          <div key={item.id} className="Row">
+            <div className="Left">
+             
 
-              <p className="OrderTitle">
+              <p className="Title">
                 {item.title} × {item.quantity}
               </p>
-              <p className="OrderStore">
+              <p className="Store">
                 {item.store}
               </p>
             </div>
 
-            <div className="OrderPrice">
+            <div className="Price">
               ${item.price}
             </div>
           </div>
