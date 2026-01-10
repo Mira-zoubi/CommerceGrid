@@ -1,0 +1,82 @@
+.aramex-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+
+.aramex-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 3rem 4rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+
+.aramex-header-left {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.aramex-logo-box {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 1.5rem;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.aramex-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+
+.aramex-text h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #111827;
+  margin: 0;
+}
+
+.aramex-text p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0.5rem 0 0;
+  max-width: 28rem;
+}
+
+
+.aramex-view-btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #1f2937;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.aramex-view-btn:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}

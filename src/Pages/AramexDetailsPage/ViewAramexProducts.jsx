@@ -1,37 +1,70 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import "./ViewAramexProducts.css";
 
+function ViewAramexProducts() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-function ViewAramexProducts(){
-    
-    const AramexProducts=[
-    {id:crypto.randomUUID() , src:"https://www.victoriassecret.com/p/380x507/png/zz/25/02/07/02/112542122457_OM_F.jpg" , title:"Perfume" , description:"Victoria Secret Perfume "},
-     {id:crypto.randomUUID(), src:"https://www.victoriassecret.com/p/380x507/png/zz/25/02/07/02/112542122457_OM_F.jpg" , title:"Perfume" , description:"Perfume "},
-       {id:crypto.randomUUID(),src:"https://www.victoriassecret.com/p/380x507/png/zz/25/02/07/02/112542122457_OM_F.jpg" , title:"Perfume" , description:"Perfume "},
-]
+  const handleViewProducts = async () => {
+    try {
+      const res = await fetch("http://localhost:3000/api/aramex-products");
+      const data = await res.json();
+      setProducts(data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Failed to fetch Aramex products", error);
+      setLoading(false);
+    }
+  };
 
-    return(
-        <>
-        <div> 
-<div className="flex text-center  ">
+  useEffect(() => {
+    handleViewProducts();
+  }, []);
 
-{AramexProducts.map((product)=>{
-    return(
-        <>
-       <div>     
-        
-        <img src={product.src} alt="prduct Image"/>
-        <p> {product.title}</p> 
-        <p> {product.description}</p>
-      
-         </div>   
-       
-        </>   
-    )
+  if (loading) {
+    return <p className="text-center">Loading products...</p>;
+  }
 
-})}
-</div>
+  return (
+    <div className="aramex-gallery">
+      {products.map((product) => (
+        <div key={product._id} className="aramex-card">
+
+          {product.badge && (
+            <span className="aramex-badge">{product.badge}</span>
+          )}
+
+          <img
+            src={`http://localhost:3000${product.image}`}
+            alt={product.title}
+            className="aramex-image"
+          />
+
+          <p className="aramex-title">{product.title}</p>
+
+          {product.variant && (
+            <p className="aramex-variant">{product.variant}</p>
+          )}
+
+          {product.description && (
+            <p className="aramex-description">{product.description}</p>
+          )}
+
+          <p className="aramex-price">{product.price} JOD</p>
+
+          {product.stock !== undefined && (
+            <p className="aramex-stock">
+              {product.stock > 0 ? `${product.stock} in stock` : "Out of stock"}
+            </p>
+          )}
+
+          <button type="button" className="aramex-purchase-btn">
+            Purchase
+          </button>
         </div>
-        </>
-    )
+      ))}
+    </div>
+  );
 }
+
 export default ViewAramexProducts;
