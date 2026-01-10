@@ -1,6 +1,6 @@
 import './AppHeader.css';
 import DashboardLogo from '../../assets/DashboardLogo.jpg';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 
 
@@ -8,7 +8,7 @@ function NavbarItem ({href, children, isActive}){
     return (
         <>
         <div >
-  
+
              <Link to={href} className={`link ${isActive && "link-active"}`} >
             {children}
             </Link>
@@ -60,9 +60,9 @@ function AppHeader(){
            </div>
 
             <div className='AuthLinks'>
-            <Link to={"login"} className='LoginLink'>Login</Link>
-            <Link to={"register"} className='LoginLink'>Register</Link>
-            <Link to={"cart"} ><ShoppingCartOutlined  style={{fontSize:"25px", color:"deeppink"}}/></Link>  
+            <Link to={"Login"} className='LoginLink'>Login</Link>
+            <Link to={"Register"} className='LoginLink'>Register</Link>
+            <Link to={"Cart"} ><ShoppingCartOutlined  style={{fontSize:"25px", color:"deeppink"}}/></Link>  
             </div>
 
             

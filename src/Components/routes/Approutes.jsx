@@ -8,6 +8,9 @@ import AppleDetails from "../../Pages/AppleDetailsPage/AppleDetails";
 import AmazonDetails from "../../Pages/AmazonDetailsPage/AmazonDetails";
 import ViewAramexProducts from "../../Pages/AramexDetailsPage/ViewAramexProducts";
 import DefaultAramexPage from "../../Pages/AramexDetailsPage/DefaultAramexPage";
+import Login from "../Auth/Login";
+import Register from "../Auth/Register";
+import Cart from "../Auth/Cart";
 
 
 const routes = [
@@ -31,6 +34,18 @@ const routes = [
         path: "customers",
         element: <Customers />
       },
+       {
+        path:"/Login",
+        element: <Login/>
+      },
+       {
+        path:"/Register",
+        element: <Register/>
+      },
+       {
+        path:"/Cart",
+        element: <Cart/>
+      },
       {
         path:"/AramexDetails",
         element: <AramexDetails/>,
@@ -53,6 +68,7 @@ const routes = [
         path:"/AmazonDetails",
         element: <AmazonDetails/>
       },
+        
    
     ]
   }
