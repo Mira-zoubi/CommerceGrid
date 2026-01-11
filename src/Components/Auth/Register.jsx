@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import "./Register.css";
+
 import "./Register.css";
 
 function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
 
   return (
     <div className="register-layout">
@@ -58,22 +59,20 @@ function Register() {
       </div>
 
 
-      <div className="register-right">
-        <div className="form-wrapper">
 
           <div className="form-header">
             <h3>Create Account</h3>
             <p>Start selling smarter, not harder</p>
           </div>
 
-          <form className="register-form">
+
             <div className="field">
               <label>Full Name</label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Mira Zoubi"
+
               />
             </div>
 
@@ -83,7 +82,7 @@ function Register() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="mira@example.com"
+
               />
             </div>
 
@@ -93,7 +92,7 @@ function Register() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
+
               />
             </div>
 
@@ -103,12 +102,7 @@ function Register() {
           </form>
 
           <p className="signin-text">
-            Already have an account?{" "}
-            <Link to="/login">Sign in</Link>
-          </p>
 
-          <p className="footer-text">
-            Used by premium brands worldwide ✨
           </p>
         </div>
       </div>
@@ -116,4 +110,4 @@ function Register() {
   );
 }
 
-export default Register;
+

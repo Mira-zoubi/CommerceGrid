@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+
 import "./Login.css";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  return (
-    <div className="login-layout">
 
-      {/* LEFT SIDE (same visuals) */}
       <div className="login-left">
         <div className="gradient-bg" />
         <div className="glow glow-top" />
@@ -50,23 +48,20 @@ function Login() {
         </div>
       </div>
 
-      {/* RIGHT SIDE */}
-      <div className="login-right">
-        <div className="form-wrapper">
 
           <div className="form-header">
             <h3>Sign In</h3>
             <p>Access your vendor dashboard</p>
           </div>
 
-          <form className="login-form">
+
             <div className="field">
               <label>Email Address</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="mira@example.com"
+
               />
             </div>
 
@@ -76,7 +71,7 @@ function Login() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
+
               />
             </div>
 
@@ -86,12 +81,7 @@ function Login() {
           </form>
 
           <p className="signin-text">
-            Don’t have an account?{" "}
-            <Link to="/register">Create one</Link>
-          </p>
 
-          <p className="footer-text">
-            Secure access for premium vendors ✨
           </p>
         </div>
       </div>
@@ -99,4 +89,4 @@ function Login() {
   );
 }
 
-export default Login;
+
