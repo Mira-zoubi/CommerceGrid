@@ -1,43 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 import "./Login.css";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-   const navigate = useNavigate();
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-
-    const res = await fetch("http://localhost:3000/api/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
-    });
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      alert(data.message);
-      return;
-    }
-
-    localStorage.setItem("token", data.token);
-    localStorage.setItem("role", data.user.role);
-
-    if (data.user.role === "owner") {
-      navigate("/");
-    } else {
-      navigate("/");
-    }
-  };
-
-  return (
-    <div className="login-layout">
 
 
       <div className="login-left">
@@ -80,22 +48,20 @@ function Login() {
         </div>
       </div>
 
- 
-     <div className="login-right">
-        <div className="form-wrapper">
+
           <div className="form-header">
             <h3>Sign In</h3>
             <p>Access your vendor dashboard</p>
           </div>
 
-          <form className="login-form" onSubmit={handleLogin}>
+
             <div className="field">
               <label>Email Address</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                required
+
               />
             </div>
 
@@ -105,7 +71,7 @@ function Login() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                required
+
               />
             </div>
 
@@ -115,7 +81,7 @@ function Login() {
           </form>
 
           <p className="signin-text">
-            Don’t have an account? <Link to="/register">Create one</Link>
+
           </p>
         </div>
       </div>
@@ -123,4 +89,4 @@ function Login() {
   );
 }
 
-export default Login;
+

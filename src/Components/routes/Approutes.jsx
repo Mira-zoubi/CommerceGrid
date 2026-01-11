@@ -10,6 +10,9 @@ import AmazonDetails from "../../Pages/AmazonDetailsPage/AmazonDetails";
 
 import ViewAramexProducts from "../../Pages/AramexDetailsPage/ViewAramexProducts";
 import DefaultAramexPage from "../../Pages/AramexDetailsPage/DefaultAramexPage";
+import Login from "../Auth/Login";
+import Register from "../Auth/Register";
+import Cart from "../Auth/Cart";
 
 import ViewAmazonProducts from "../../Pages/AmazonDetailsPage/ViewAmazonProducts";
 import DefaultAmazonPage from "../../Pages/AmazonDetailsPage/DefaultAmazonPage";
@@ -48,6 +51,18 @@ const routes = [
       {
         path: "login",
         element: <Login />,
+      },
+       {
+        path:"/Login",
+        element: <Login/>
+      },
+       {
+        path:"/Register",
+        element: <Register/>
+      },
+       {
+        path:"/Cart",
+        element: <Cart/>
       },
       {
         path: "register",
@@ -116,8 +131,7 @@ const routes = [
           },
         ],
       },
-    ],
-  },
+
 ];
 
 export default routes;
