@@ -1,0 +1,248 @@
+.login-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  font-family: system-ui, sans-serif;
+  overflow: auto;
+}
+
+@media (min-width: 1024px) {
+  .login-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.login-left {
+  position: relative;
+  display: none;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .login-left {
+    display: flex;
+  }
+}
+
+/* shared visuals */
+.gradient-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #8073af, #976dad, #8a4d7d);
+}
+
+.glow {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+  animation: pulse 4s infinite alternate;
+}
+
+.glow-top {
+  top: -100px;
+  left: -100px;
+  background: #f472b6;
+}
+
+.glow-bottom {
+  bottom: -80px;
+  right: -80px;
+  background: #c084fc;
+}
+
+@keyframes pulse {
+  from { opacity: 0.35; }
+  to { opacity: 0.55; }
+}
+
+.left-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 4rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.brand h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.brand h2 span {
+  color: #fbcfe8;
+}
+
+.brand p {
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero {
+  max-width: 520px;
+  margin-top: 3rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.hero h1 span {
+  color: #fbcfe8;
+}
+
+.hero p {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.features {
+  margin-top: 3rem;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.feature-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f472b6, #a855f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.login-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(135deg, #f9fafb, #ffffff);
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border-radius: 2rem;
+  padding: 3rem 2.5rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.form-header {
+  margin-bottom: 2.5rem;
+}
+
+.form-header h3 {
+  font-size: 1.9rem;
+  font-weight: 800;
+}
+
+.form-header p {
+  margin-top: 0.5rem;
+  color: #6b7280;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.field input {
+  width: 100%;
+  margin-top: 6px;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #a855f7;
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.3);
+}
+
+.submit-btn {
+  margin-top: 1.5rem;
+  padding: 0.85rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.signin-text {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.signin-text a {
+  color: #7c3aed;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signin-text a:hover {
+  text-decoration: underline;
+}
+
+.footer-text {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}

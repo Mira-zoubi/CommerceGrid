@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-
 import "../AramexDetailsPage/ViewAramexProducts.css";
-
 
 function ViewAppleProducts() {
   const [products, setProducts] = useState([]);
@@ -19,6 +17,39 @@ function ViewAppleProducts() {
     }
   };
 
+
+  const handleAddToCart = async (productId) => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("Please login first");
+      return;
+    }
+
+    try {
+      const res = await fetch("http://localhost:3000/api/cart/items", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          productId,
+          productModel: "AppleProducts", 
+        }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        alert(err.message || "Failed to add to cart");
+        return;
+      }
+
+      alert("Added to cart");
+    } catch (err) {
+      alert("Error adding to cart");
+    }
+  };
+
   useEffect(() => {
     handleViewProducts();
   }, []);
@@ -31,7 +62,6 @@ function ViewAppleProducts() {
     <div className="aramex-gallery">
       {products.map((product) => (
         <div key={product._id} className="aramex-card">
-
           {product.badge && (
             <span className="aramex-badge">{product.badge}</span>
           )}
@@ -60,7 +90,11 @@ function ViewAppleProducts() {
             </p>
           )}
 
-          <button type="button" className="aramex-purchase-btn">
+          <button
+            type="button"
+            className="aramex-purchase-btn"
+            onClick={() => handleAddToCart(product._id)}
+          >
             Purchase
           </button>
         </div>
