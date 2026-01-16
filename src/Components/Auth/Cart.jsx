@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Cart.css";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Cart() {
   const [cart, setCart] = useState({ items: [] });
@@ -12,7 +13,7 @@ function Cart() {
 
   const fetchCart = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/cart", {
+    const res = await fetch(`${BASE_URL}/api/cart`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -31,7 +32,7 @@ function Cart() {
     if (quantity < 1) return;
 
     const res = await fetch(
-      `http://localhost:3000/api/cart/items/${itemId}`,
+      `${BASE_URL}/api/cart/items/${itemId}`,
       {
         method: "PUT",
         headers: {
@@ -48,7 +49,7 @@ function Cart() {
 
   const deleteItem = async (itemId) => {
     const res = await fetch(
-      `http://localhost:3000/api/cart/items/${itemId}`,
+      `${BASE_URL}/api/cart/items/${itemId}`,
       {
         method: "DELETE",
         headers: {
@@ -87,7 +88,8 @@ function Cart() {
           {cart.items.map((item) => (
             <div key={item._id} className="cart-item">
               <img
-                src={`http://localhost:3000${item.product?.image}`}
+    src={`${BASE_URL}${item.product?.image}`}
+
                 alt={item.product?.title}
                 className="cart-image"
               />

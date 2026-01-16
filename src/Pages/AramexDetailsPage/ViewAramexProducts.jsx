@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./ViewAramexProducts.css";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function ViewAramexProducts() {
   const [products, setProducts] = useState([]);
@@ -7,7 +8,8 @@ function ViewAramexProducts() {
 
   const handleViewProducts = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/aramex-products");
+  const res = await fetch(`${BASE_URL}/api/aramex-products`);
+
       const data = await res.json();
       setProducts(data);
       setLoading(false);
@@ -25,7 +27,7 @@ function ViewAramexProducts() {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/api/cart/items", {
+     const res = await fetch(`${BASE_URL}/api/cart/items`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -62,7 +64,8 @@ function ViewAramexProducts() {
           {product.badge && <span className="aramex-badge">{product.badge}</span>}
 
           <img
-            src={`http://localhost:3000${product.image}`}
+           src={`${BASE_URL}${product.image}`}
+
             alt={product.title}
             className="aramex-image"
           />
