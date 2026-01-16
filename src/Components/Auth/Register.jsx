@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import "./Register.css";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
 
 
   return (

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../AramexDetailsPage/ViewAramexProducts.css";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function ViewAmazonProducts() {
   const [products, setProducts] = useState([]);
@@ -7,7 +8,8 @@ function ViewAmazonProducts() {
 
   const handleViewProducts = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/amazon-products");
+      const res = await fetch(`${BASE_URL}/api/amazon-products`);
+
       const data = await res.json();
       setProducts(data);
       setLoading(false);
@@ -24,7 +26,7 @@ function ViewAmazonProducts() {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/api/cart/items", {
+      const res = await fetch(`${BASE_URL}/api/cart/items`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +67,7 @@ function ViewAmazonProducts() {
           )}
 
           <img
-            src={`http://localhost:3000${product.image}`}
+           src={`${BASE_URL}${product.image}`}
             alt={product.title}
             className="aramex-image"
           />
