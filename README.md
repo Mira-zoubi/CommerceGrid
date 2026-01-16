@@ -133,15 +133,107 @@ src/
 ```
 
 ---
+## 8. Data Management and API Integration
 
-## 8. 🚀 Getting Started
+The CommerceGrid frontend uses **React Context API** to centrally manage dashboard data, loading states, and error handling across the application.
+
+A dedicated context provider (`PagesContext`) is responsible for:
+- Fetching external data
+- Storing aggregated dashboard metrics
+- Providing shared state to all dashboard components
+
+This design avoids prop drilling and ensures consistent data access throughout the application.
+
+---
+
+## 8.1 PagesContext Overview
+
+The `PagesContext` manages the following state values:
+
+- `InventoryTotal` – Total number of inventory items
+- `OrdersTotal` – Total number of orders
+- `CustomersTotal` – Total number of customers
+- `RecentOrders` – List of recent ordered products
+- `InventoryArray` – Full inventory list
+- `OrdersArray` – Full orders list
+- `CustomersArray` – Customer data list
+- `FeedbackArray` – Recent customer feedback/comments
+- `Loading` – Global loading state
+- `Error` – Global error state
+
+All states are initialized using `useState` and populated via `useEffect` hooks.
+
+---
+
+## 8.2 External APIs Used (Development Phase)
+
+During the development phase, the frontend fetches data from public APIs to simulate real backend behavior.
+
+### Inventory Data
+- **Endpoint:** `https://dummyjson.com/products`
+- **Used for:**
+  - Total inventory count
+  - Full inventory listing
+
+---
+
+### Orders Data
+- **Endpoint:** `https://dummyjson.com/carts`
+- **Used for:**
+  - Total orders count
+  - Orders listing (flattened from carts)
+  - Recent orders preview
+
+---
+
+### Customers Data
+- **Endpoint:** `https://dummyjson.com/users`
+- **Used for:**
+  - Total customers count
+
+- **Endpoint:** `https://randomuser.me/api/?results=10`
+- **Used for:**
+  - Customer list display
+
+---
+
+### Feedback Data
+- **Endpoint:** `https://dummyjson.com/comments`
+- **Used for:**
+  - Recent customer feedback and comments
+
+---
+
+## 8.3 Data Fetching Strategy
+
+- Data fetching is performed using the **Fetch API**
+- Each dataset is fetched inside a dedicated `useEffect` hook
+- Responses are validated using HTTP status checks
+- Errors are captured and stored in a centralized `Error` state
+- The `Loading` state ensures the UI renders only after critical data is loaded
+
+Example strategy:
+- Totals are extracted directly from API metadata
+- Lists are processed using array transformations such as `flatMap` and `slice`
+- Only a limited subset of data is displayed for dashboard previews
+
+---
+
+## 8.4 Context Usage
+
+The context provider wraps the application and exposes all values through `PagesContext`, allowing any component to access dashboard data using:
+
+```js
+useContext(PagesContext)
+
+## 9. 🚀 Getting Started
 
 This section provides a **complete, step-by-step guide** for setting up and running the CommerceGrid Frontend locally.  
 It is written for **developers, instructors, and evaluators** cloning the project from GitHub.
 
 ---
 
-### 8.1 Prerequisites
+### 9.1 Prerequisites
 
 The following software **must be installed** before proceeding:
 
