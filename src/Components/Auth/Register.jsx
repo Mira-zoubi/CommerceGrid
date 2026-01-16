@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import "./Register.css";
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -9,30 +9,7 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigate();
 
-  const handleRegister = async (e) => {
-    e.preventDefault();
-
-  const res = await fetch(`${BASE_URL}/api/auth/register`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, password }),
-    });
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      alert(data.message);
-      return;
-    }
-
-    localStorage.setItem("token", data.token);
-    localStorage.setItem("role", data.user.role);
-
-  
-    navigate("/login");
-  };
 
   return (
     <div className="register-layout">
@@ -84,21 +61,20 @@ function Register() {
       </div>
 
 
-       <div className="register-right">
-        <div className="form-wrapper">
+
           <div className="form-header">
             <h3>Create Account</h3>
             <p>Start selling smarter, not harder</p>
           </div>
 
-          <form className="register-form" onSubmit={handleRegister}>
+
             <div className="field">
               <label>Full Name</label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                required
+
               />
             </div>
 
@@ -108,7 +84,7 @@ function Register() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                required
+
               />
             </div>
 
@@ -118,7 +94,7 @@ function Register() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                required
+
               />
             </div>
 
@@ -128,7 +104,7 @@ function Register() {
           </form>
 
           <p className="signin-text">
-            Already have an account? <Link to="/login">Sign in</Link>
+
           </p>
         </div>
       </div>
@@ -136,4 +112,4 @@ function Register() {
   );
 }
 
-export default Register;
+
