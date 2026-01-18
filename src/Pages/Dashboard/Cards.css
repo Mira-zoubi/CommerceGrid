@@ -54,3 +54,78 @@ font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   color: #111827;
 }
+/* ===============================
+   RESPONSIVE – KPI CARDS
+================================ */
+
+/* Large tablets */
+@media (max-width: 1024px) {
+  .CardsContainer {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .Cards {
+    width: 200px;
+    padding: 14px 16px;
+  }
+
+  .Percentage,
+  .total {
+    font-size: 28px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .CardsContainer {
+    gap: 14px;
+    justify-content: center;
+  }
+
+  .Cards {
+    width: 180px;
+    padding: 14px;
+  }
+
+  .Title {
+    font-size: 15px;
+  }
+
+  .Percentage,
+  .total {
+    font-size: 26px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .CardsContainer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .Cards {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .Percentage,
+  .total {
+    font-size: 30px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  .Title {
+    font-size: 14px;
+  }
+
+  .Percentage,
+  .total {
+    font-size: 26px;
+  }
+}

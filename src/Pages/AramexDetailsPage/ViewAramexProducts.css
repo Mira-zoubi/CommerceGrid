@@ -154,3 +154,119 @@
     0 8px 20px rgba(0, 0, 0, 0.25),
     inset 0 2px 6px rgba(0, 0, 0, 0.3);
 }
+/* ===============================
+   RESPONSIVE – ARAMEX GALLERY
+================================ */
+
+/* Small laptops & tablets */
+@media (max-width: 1200px) {
+  .aramex-gallery {
+    padding: 2.5rem;
+    gap: 2rem;
+  }
+
+  .aramex-card {
+    width: 250px;
+    height: 410px;
+  }
+
+  .aramex-image {
+    width: 180px;
+    height: 120px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .aramex-gallery {
+    padding: 2rem 1.5rem;
+    gap: 1.8rem;
+  }
+
+  .aramex-card {
+    width: 220px;
+    height: 390px;
+  }
+
+  .aramex-title {
+    font-size: 1.05rem;
+  }
+
+  .aramex-description {
+    font-size: 0.75rem;
+  }
+
+  .aramex-purchase-btn {
+    padding: 0.8rem 2.2rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .aramex-gallery {
+    justify-content: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .aramex-card {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    padding: 1.6rem 1.4rem;
+  }
+
+  .aramex-image {
+    width: 190px;
+    height: 130px;
+  }
+
+  .aramex-description {
+    padding: 0 0.4rem;
+  }
+
+  .aramex-purchase-btn {
+    width: 100%;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .aramex-card {
+    max-width: 100%;
+    border-radius: 22px;
+  }
+
+  .aramex-title {
+    font-size: 1rem;
+  }
+
+  .aramex-variant {
+    font-size: 0.75rem;
+  }
+
+  .aramex-description {
+    font-size: 0.72rem;
+  }
+
+  .aramex-price {
+    font-size: 0.95rem;
+  }
+
+  .aramex-stock {
+    font-size: 0.7rem;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  .aramex-image {
+    width: 160px;
+    height: 110px;
+  }
+
+  .aramex-purchase-btn {
+    font-size: 0.7rem;
+    padding: 0.7rem 1.8rem;
+  }
+}

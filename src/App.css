@@ -18,3 +18,43 @@
   
   
 }
+/* ===============================
+   RESPONSIVE – APP LAYOUT
+================================ */
+
+/* Small laptops */
+@media (max-width: 1200px) {
+  .AppMain {
+    grid-template-columns: 220px 1fr;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .AppMain {
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+/* Tablets & small screens */
+@media (max-width: 768px) {
+  .App {
+    height: auto; /* prevent overflow */
+    min-height: 100vh;
+  }
+
+  .AppMain {
+    grid-template-columns: 1fr; /* stack layout */
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .App {
+    width: 100%;
+  }
+
+  .AppMain {
+    grid-template-columns: 1fr;
+  }
+}

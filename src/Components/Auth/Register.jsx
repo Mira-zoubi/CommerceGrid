@@ -1,29 +1,21 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-
 import "./Register.css";
-const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
-
   return (
     <div className="register-layout">
-
-  
+      {/* LEFT SIDE */}
       <div className="register-left">
-
         <div className="gradient-bg" />
         <div className="glow glow-top" />
         <div className="glow glow-bottom" />
 
         <div className="left-content">
-
-       
           <div className="brand">
             <h2>
               Mira<span>Panel</span>
@@ -32,7 +24,6 @@ function Register() {
             <span className="badge">✨ Trusted by 10,000+ Vendors</span>
           </div>
 
-      
           <div className="hero">
             <h1>
               Build Your <br />
@@ -44,7 +35,6 @@ function Register() {
             </p>
           </div>
 
-        
           <div className="features">
             {[
               "10,000+ curated beauty products",
@@ -60,56 +50,52 @@ function Register() {
         </div>
       </div>
 
-
-
+      {/* RIGHT SIDE */}
+      <div className="register-right">
+        <form className="register-form">
           <div className="form-header">
             <h3>Create Account</h3>
             <p>Start selling smarter, not harder</p>
           </div>
 
+          <div className="field">
+            <label>Full Name</label>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
 
-            <div className="field">
-              <label>Full Name</label>
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+          <div className="field">
+            <label>Email Address</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
-              />
-            </div>
+          <div className="field">
+            <label>Password</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
 
-            <div className="field">
-              <label>Email Address</label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-
-              />
-            </div>
-
-            <div className="field">
-              <label>Password</label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-
-              />
-            </div>
-
-            <button type="submit" className="submit-btn">
-              Register →
-            </button>
-          </form>
+          <button type="submit" className="submit-btn">
+            Register →
+          </button>
 
           <p className="signin-text">
-
+            Already have an account? <Link to="/login">Sign in</Link>
           </p>
-        </div>
+        </form>
       </div>
     </div>
   );
 }
 
-
+export default Register;

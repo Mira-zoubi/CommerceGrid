@@ -35,3 +35,65 @@
     grid-template-columns: 1fr;
   }
 }
+/* ===============================
+   RESPONSIVE – CHARTS
+================================ */
+
+/* Small laptops & tablets */
+@media (max-width: 1024px) {
+  .Charts {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    height: auto; /* override fixed height */
+  }
+
+  .chart-card {
+    padding: 20px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .Charts {
+    margin-top: 32px;
+    gap: 16px;
+  }
+
+  .ChartTitle {
+    font-size: 13px;
+  }
+
+  .chart-card {
+    padding: 18px;
+    border-radius: 18px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .Charts {
+    margin-top: 24px;
+    gap: 14px;
+  }
+
+  .ChartTitle {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .chart-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  .chart-card {
+    padding: 14px;
+  }
+
+  .ChartTitle {
+    font-size: 11px;
+  }
+}

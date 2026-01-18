@@ -46,3 +46,83 @@
 .CompanyCard a:hover {
   background-color: #374151;
 }
+/* ===============================
+   RESPONSIVE – COMPANY CARDS
+================================ */
+
+/* Small laptops & tablets */
+@media (max-width: 1024px) {
+  .CompanyCardsConatiner {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .CompanyCard {
+    padding: 22px;
+  }
+
+  .CompanyCard img {
+    width: 170px;
+    height: 130px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .CompanyCardsConatiner {
+    gap: 16px;
+  }
+
+  .CompanyCard {
+    width: 260px;
+  }
+
+  .CompanyCard img {
+    width: 150px;
+    height: 115px;
+  }
+
+  .CompanyCard h3 {
+    font-size: 15px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .CompanyCardsConatiner {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .CompanyCard {
+    width: 100%;
+    max-width: 320px;
+    padding: 20px;
+  }
+
+  .CompanyCard img {
+    width: 140px;
+    height: 105px;
+  }
+
+  .CompanyCard a {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  .CompanyCard h3 {
+    font-size: 14px;
+  }
+
+  .CompanyCard img {
+    width: 120px;
+    height: 90px;
+  }
+}

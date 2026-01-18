@@ -90,3 +90,101 @@
 .Table tbody tr:nth-child(even) {
   background-color: #fafafa;
 }
+/* ===============================
+   RESPONSIVE – CUSTOMERS TABLE
+================================ */
+
+/* Large tablets */
+@media (max-width: 1024px) {
+  .PageTitle {
+    font-size: 24px;
+    margin: 24px 32px 12px;
+  }
+
+  .CustomersArrayContainer {
+    margin: 30px auto;
+    padding: 16px;
+  }
+
+  .Table {
+    font-size: 14px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .PageTitle {
+    margin: 20px 20px 10px;
+    font-size: 22px;
+  }
+
+  .CustomersArrayContainer {
+    width: calc(100% - 24px);
+    padding: 12px;
+  }
+
+  .Table {
+    min-width: 700px; /* enable horizontal scroll */
+  }
+}
+
+/* Phones – stacked rows */
+@media (max-width: 480px) {
+  .Table {
+    min-width: 100%;
+    border-spacing: 0 12px;
+  }
+
+  .Table thead {
+    display: none;
+  }
+
+  .Table tbody tr {
+    display: block;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    margin-bottom: 14px;
+    padding: 12px;
+  }
+
+  .Table tbody tr:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+  }
+
+  .Table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .Table td:last-child {
+    border-bottom: none;
+  }
+
+  .Table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #475569;
+    font-size: 13px;
+  }
+
+  .thumbnail {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .PageTitle {
+    font-size: 20px;
+  }
+
+  .Table td {
+    font-size: 13px;
+  }
+}

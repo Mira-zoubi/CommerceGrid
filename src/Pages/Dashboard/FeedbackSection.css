@@ -21,3 +21,57 @@
   border: none;
   padding: 0;
 }
+/* ===============================
+   RESPONSIVE – FEEDBACK
+================================ */
+
+/* Small laptops & tablets */
+@media (max-width: 1024px) {
+  .FeedbackContainer {
+    padding: 22px;
+  }
+
+  .FeedbackMessages {
+    font-size: 17px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .FeedbackContainer {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .FeedbackMessages {
+    font-size: 16px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .FeedbackContainer {
+    padding: 16px;
+    margin-top: 20px;
+  }
+
+  .FeedbackMessages {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .ShowMoreLessButton {
+    font-size: 14px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  .FeedbackMessages {
+    font-size: 14px;
+  }
+
+  .ShowMoreLessButton {
+    font-size: 13px;
+  }
+}

@@ -100,3 +100,90 @@
     background-position: 100% 50%;
   }
 }
+/* ===============================
+   RESPONSIVE – MARQUEE
+================================ */
+
+/* Small laptops & tablets */
+@media (max-width: 1024px) {
+  .marquee {
+    width: 100%;
+    max-width: 800px;
+    padding: 26px 0;
+  }
+
+  .marquee-track {
+    gap: 48px;
+  }
+
+  .marquee-track img {
+    height: 75px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .marqueeTitle {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .marqueeTitle h2 {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+
+  .marquee {
+    width: 100%;
+    padding: 22px 0;
+    border-radius: 20px;
+  }
+
+  .marquee::before {
+    border-radius: 20px;
+  }
+
+  .marquee-track {
+    gap: 40px;
+  }
+
+  .marquee-track img {
+    height: 65px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .marqueeTitle {
+    margin-top: 30px;
+  }
+
+  .marqueeTitle h2 {
+    font-size: 20px;
+  }
+
+  .marquee {
+    padding: 18px 0;
+    border-radius: 18px;
+  }
+
+  .marquee-track {
+    gap: 28px;
+    animation-duration: 18s; /* slightly faster on small screens */
+  }
+
+  .marquee-track img {
+    height: 52px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  .marqueeTitle h2 {
+    font-size: 18px;
+  }
+
+  .marquee-track img {
+    height: 46px;
+  }
+}
